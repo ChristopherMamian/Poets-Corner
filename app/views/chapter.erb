@@ -1,0 +1,12 @@
+<h2>Chapter <%= "#{@chapter.title}" %></h2>
+
+<h3>Comments</h3>
+<ul>
+<% @chapter.comments.each do |comment| %>
+  <li><a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/#{comment.id}"%>><%= comment.content %></li>
+<% end %>
+</ul>
+
+<p>
+<a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/new"%>>Leave a Comment</a><br>
+<a href=<%="/stories/#{@story.id}"%>>Back to Story</a>

@@ -1,0 +1,13 @@
+<h3>STORY: <%= @story.title %></h3>
+<h5>GENRE: <%= @story.genre %><h5>
+
+<h3>Chapters</h3>
+<ol>
+<% @story.chapters.each do |chapter| %>
+  <li><a href=<%="/stories/#{@story.id}/chapters/#{chapter.id}"%>><%= "#{chapter.title}" %></li>
+<% end %>
+</ol>
+
+<p>
+<a href=<%="/stories/#{@story.id}/chapters/new"%>>Create a new Chapter</a><br>
+<a href=<%="/dashboard"%>>Back to Dashboard</a>

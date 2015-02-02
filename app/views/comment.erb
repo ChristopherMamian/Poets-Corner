@@ -1,0 +1,5 @@
+<h3>Comment on <%="Chapter #{@chapter.title.upcase} from #{@story.title.upcase}"%></h3>
+<%= @comment.content %>
+
+<p>
+<a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}"%>>Back to Chapter</a>

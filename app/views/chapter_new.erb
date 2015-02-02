@@ -1,0 +1,7 @@
+<h3>Create new story</h3>
+
+<form action=<%="/stories/#{@story.id}/chapters/new"%> method="post">
+  <input type="string" name="chapter[title]" placeholder="title"><br>
+  <textarea name="chapter[content]">Your chapter here!</textarea><br>
+  <input type="submit" value="Create!">
+</form>
