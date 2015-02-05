@@ -9,7 +9,7 @@ end
 get '/dashboard' do
   if current_user
     @user = User.find(session[:user_id])
-    @stories = Story.all
+    @users = User.all
     @user_stories = @user.stories
     erb :dashboard
   else

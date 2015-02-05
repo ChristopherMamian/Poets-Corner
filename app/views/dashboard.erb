@@ -8,10 +8,10 @@
 </ol>
 
 
-<h3>All Stories</h3>
+<h3>All Users</h3>
 <ul>
-<% @stories.each do |story| %>
-  <li><a href=<%="/stories/#{story.id}/public"%>><%= story.title %></a></li>
+<% @users.each do |user| %>
+  <li><a href=<%="/users/#{user.id}"%>><%= user.name %></a></li>
 <% end %>
 </ul>
 
