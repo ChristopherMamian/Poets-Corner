@@ -5,6 +5,8 @@ get '/' do
     if has_playlist?(session[:user_id]) == true
       redirect '/dashboard'
     else
+      user = User.find(session[:user_id])
+      user.notifications.create(:content => "Connect with SoundCloud!", :link => '/connect_to_soundcloud')
       redirect '/connect_to_soundcloud'
     end
   else

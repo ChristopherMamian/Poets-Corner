@@ -21,6 +21,8 @@ gem 'soundcloud'
 
 gem 'dotenv'
 
+gem 'bcrypt-ruby'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'

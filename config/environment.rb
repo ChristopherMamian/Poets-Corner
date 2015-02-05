@@ -24,6 +24,8 @@ require 'soundcloud'
 
 require 'dotenv'
 
+require 'bcrypt'
+
 Dotenv.load
 
 # Some helper constants for path-centric logic
