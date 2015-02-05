@@ -3,13 +3,20 @@
 <h3>Comments</h3>
 <ul>
 <% @chapter.comments.each do |comment| %>
-  <li><a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/#{comment.id}"%>><%= comment.content %></li>
+  <li><a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/#{comment.id}"%>><%= comment.content %></a></li>
 <% end %>
 </ul>
 
 <p>
+CONTENT:
+<br>
+<%= @chapter.content %>
+</p>
+
+<p>
 <a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/new"%>>Leave a Comment</a><br>
 
+<a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/edit"%>>Edit Chapter</a>
 <form action=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/delete"%> method="post">
   <input type="hidden" name="_method" value="delete"></input>
   <button type="submit">Delete Chapter</button>

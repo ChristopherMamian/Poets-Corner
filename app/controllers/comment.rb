@@ -21,3 +21,16 @@ delete '/stories/:story_id/chapters/:chapter_id/comments/:comment_id/delete' do
   Comment.find(params[:comment_id]).delete
   redirect "/stories/#{params[:story_id]}/chapters/#{params[:chapter_id]}"
 end
+
+get '/stories/:story_id/chapters/:chapter_id/comments/:comment_id/edit' do
+  @story = Story.find(params[:story_id])
+  @chapter = Chapter.find(params[:chapter_id])
+  @comment = Comment.find(params[:comment_id])
+  erb :comment_edit
+end
+
+put '/stories/:story_id/chapters/:chapter_id/comments/:comment_id/edit' do
+  comment = Comment.find(params[:comment_id])
+  comment.update_attributes(params[:comment])
+  redirect "/stories/#{params[:story_id]}/chapters/#{params[:chapter_id]}/comments/#{comment.id}"
+end

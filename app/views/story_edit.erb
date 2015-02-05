@@ -1,0 +1,27 @@
+<h3>Edit Story</h3>
+
+<form action=<%="/stories/#{@story.id}/edit"%> method="post">
+  <input type="hidden" name="_method" value="put"></input>
+  <input type="string" name="story[title]" value="<%=@story.title%>"></input><br>
+  <select name="story[genre]">
+    <option>Adventure</option>
+    <option>Erotic</option>
+    <option>FanFiction</option>
+    <option>Fantasty</option>
+    <option>Historical</option>
+    <option>Horror/Supernatural</option>
+    <option>Literary</option>
+    <option>Mainstream</option>
+    <option>Mystery</option>
+    <option>Personal</option>
+    <option>Religious/Spiritual</option>
+    <option>Romance</option>
+    <option>Satire/Humor</option>
+    <option>Science Fiction</option>
+    <option>Thriller/Suspense</option>
+    <option>Women's Fiction</option>
+    <option>Young Adult</option>
+    <option>Other</option>
+  </select><br>
+  <input type="submit" value="Update">
+</form>

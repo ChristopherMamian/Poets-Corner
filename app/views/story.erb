@@ -11,6 +11,7 @@
 <p>
 <a href=<%="/stories/#{@story.id}/chapters/new"%>>Create a new Chapter</a><br>
 
+<a href=<%="/stories/#{@story.id}/edit"%>>Edit Story</a>
 
 <form action=<%="/stories/#{@story.id}/delete"%> method="post">
   <input type="hidden" name="_method" value="delete"></input>
