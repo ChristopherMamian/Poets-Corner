@@ -8,7 +8,7 @@ post '/stories/:story_id/chapters/:chapter_id/comments/new' do
   params[:comment][:user_id] = session[:user_id]
   chapter = Chapter.find(params[:chapter_id])
   chapter.comments.create(params[:comment])
-  redirect "/stories/#{params[:story_id]}/chapters/#{chapter.id}"
+  redirect "/stories/#{params[:story_id]}/chapters/#{chapter.id}/public"
 end
 
 get '/stories/:story_id/chapters/:chapter_id/comments/:comment_id' do

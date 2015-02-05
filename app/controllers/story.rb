@@ -8,6 +8,11 @@ post '/stories/new' do
   redirect '/dashboard'
 end
 
+get '/stories/:story_id/public' do
+  @story = Story.find(params[:story_id])
+  erb :'story/story_public'
+end
+
 get '/stories/:story_id' do
   @story = Story.find(params[:story_id])
   erb :'story/story'

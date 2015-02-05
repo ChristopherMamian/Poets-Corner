@@ -1,0 +1,12 @@
+<h3>STORY: <%= @story.title %></h3>
+<h4>By <a href=<%="/users/#{@story.user.id}"%>><%= @story.user.name %></a></h4>
+
+<h3>Chapters</h3>
+<ol>
+<% @story.chapters.each do |chapter| %>
+  <li><a href=<%="/stories/#{@story.id}/chapters/#{chapter.id}/public"%>><%= "#{chapter.title}" %></li>
+<% end %>
+</ol>
+
+<p>
+<a href="/dashboard">Back to Dashboard</a>

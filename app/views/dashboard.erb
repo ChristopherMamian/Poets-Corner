@@ -11,7 +11,7 @@
 <h3>All Stories</h3>
 <ul>
 <% @stories.each do |story| %>
-  <li><a href=<%="/stories/#{story.id}"%>><%= story.title %></a></li>
+  <li><a href=<%="/stories/#{story.id}/public"%>><%= story.title %></a></li>
 <% end %>
 </ul>
 
