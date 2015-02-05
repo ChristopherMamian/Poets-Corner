@@ -6,6 +6,11 @@ end
 post '/stories/:story_id/chapters/new' do
   story = Story.find(params[:story_id])
   story.chapters.create(params[:chapter])
+  user = User.find(story.user_id)
+  user_friends = user.friends
+  user_friends.each do |friend|
+    friend.notifications.create(:content => "#{user.name} wrote a new chapter for #{story.title}!", :link => "/stories/#{story.id}/public")
+  end
   redirect "/stories/#{story.id}"
 end
 

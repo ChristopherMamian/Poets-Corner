@@ -5,7 +5,11 @@ end
 
 post '/stories/new' do
   user = User.find(session[:user_id])
+  user_friends = user.friends
   user.stories.create(params[:story])
+  user_friends.each do |friend|
+    friend.notifications.create(:content => "#{user.name} started a new story!", :link => "/users/#{user.id}")
+  end
   redirect '/dashboard'
 end
 

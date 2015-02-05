@@ -6,8 +6,11 @@ end
 
 post '/stories/:story_id/chapters/:chapter_id/comments/new' do
   params[:comment][:user_id] = session[:user_id]
+  story = Story.find(params[:story_id])
   chapter = Chapter.find(params[:chapter_id])
   chapter.comments.create(params[:comment])
+  author = User.find(story.user_id)
+  author.notifications.create(:content => "New comment on #{story.title} -- Chapter #{chapter.chapter_number}", :link => "/stories/#{story.id}/chapters/#{chapter.id}")
   redirect "/stories/#{params[:story_id]}/chapters/#{chapter.id}/public"
 end
 

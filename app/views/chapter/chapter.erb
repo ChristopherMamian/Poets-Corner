@@ -9,7 +9,7 @@
   <h3>Comments:</h3>
   <ul>
   <% @chapter.comments.each do |comment| %>
-    <li><a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/#{comment.id}"%>><%= comment.content %></a></li>
+    <li><a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/#{comment.id}"%>><%= comment.content %></a> -- <%= comment.user.name %> </li>
   <% end %>
   </ul>
 

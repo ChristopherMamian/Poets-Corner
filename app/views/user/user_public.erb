@@ -20,9 +20,8 @@
       <% @author.stories.each do |story| %>
         <li><a href=<%="/stories/#{story.id}/public"%>><%= story.title %></a></li>
       <% end %>
-
 <% else %>
-  <a href=<%="/users/#{@current_user.id}/friends/new/#{@author.id}"%>>Add Critique Partner</a>
+    <a href=<%="/users/#{@current_user.id}/friends/new/#{@author.id}"%>>Add Critique Partner</a>
 <% end %>
 
 
