@@ -3,7 +3,8 @@ get '/stories/new' do
 end
 
 post '/stories/new' do
-  Story.create(params[:story])
+  user = User.find(session[:user_id])
+  user.stories.create(params[:story])
   redirect '/dashboard'
 end
 

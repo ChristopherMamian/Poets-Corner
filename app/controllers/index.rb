@@ -10,6 +10,7 @@ get '/dashboard' do
   if current_user
     @user = User.find(session[:user_id])
     @stories = Story.all
+    @user_stories = @user.stories
     erb :dashboard
   else
     erb :login

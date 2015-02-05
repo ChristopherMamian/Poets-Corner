@@ -1,6 +1,14 @@
 <h1>Welcome <%=@user.name%>!</h1>
 
-<h3>Stories</h3>
+<h3>Your Stories</h3>
+<ol>
+<% @user_stories.each do |story| %>
+  <li><a href=<%="/stories/#{story.id}"%>><%= story.title %></a></li>
+<% end %>
+</ol>
+
+
+<h3>All Stories</h3>
 <ul>
 <% @stories.each do |story| %>
   <li><a href=<%="/stories/#{story.id}"%>><%= story.title %></a></li>
@@ -10,5 +18,7 @@
 <p>
 
 <a href="/stories/new">START A NEW STORY</a>
-<br>
+<p>
+<a href=<%="/users/#{@user.id}/edit"%>>Edit Your Account</a>
+<p>
 <a href="/logout">LOGOUT</a>

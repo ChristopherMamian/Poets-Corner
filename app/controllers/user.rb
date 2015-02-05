@@ -22,8 +22,29 @@ post '/users/new' do
   if user.save
     @user = User.find_by(:email => params[:user][:email])
     session[:user_id] = @user.id
-    redirect '/'
+    redirect '/dashboard'
   else
     erb :error, :locals => {:message => "Oopse! One of the fields is missing! Please try to sign up again." }
   end
+end
+
+get '/users/:user_id/edit' do
+  @user = User.find(params[:user_id])
+  erb :'user/user_edit'
+end
+
+put '/users/:user_id/edit' do
+  user = User.find(params[:user_id])
+  user.update_attributes(params[:user])
+  redirect '/'
+end
+
+get '/users/:user_id/delete' do
+  User.find(params[:user_id]).delete
+  redirect '/logout'
+end
+
+get '/users/:user_id' do
+  user = User.find(params[:user_id])
+  "Public user profile page here for #{user.name} soon!"
 end

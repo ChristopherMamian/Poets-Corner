@@ -1,5 +1,6 @@
 <h3>Comment on <%="Chapter #{@chapter.title.upcase} from #{@story.title.upcase}"%></h3>
-<%= @comment.content %>
+<%= @comment.content %><p>
+-- <a href=<%="/users/#{@comment.user.id}"%>><%= @comment.user.name %></a>
 
 <p>
   <form action=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/#{@comment.id}/delete"%> method="post">
