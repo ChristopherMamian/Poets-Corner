@@ -1,0 +1,12 @@
+<h3>Comment on <%="Chapter #{@chapter.title.upcase} from #{@story.title.upcase}"%></h3>
+<%= @comment.content %>
+
+<p>
+  <form action=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/#{@comment.id}/delete"%> method="post">
+    <input type="hidden" name="_method" value="delete"></input>
+  <button type="submit">Delete Comment</button>
+</form>
+<p>
+  <a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/#{@comment.id}/edit"%>>Edit Comment</a>
+<p>
+<a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}"%>>Back to Chapter</a>

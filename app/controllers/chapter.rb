@@ -1,6 +1,6 @@
 get '/stories/:story_id/chapters/new' do
   @story = Story.find(params[:story_id])
-  erb :chapter_new
+  erb :'chapter/chapter_new'
 end
 
 post '/stories/:story_id/chapters/new' do
@@ -12,7 +12,7 @@ end
 get '/stories/:story_id/chapters/:chapter_id' do
   @story = Story.find(params[:story_id])
   @chapter = Chapter.find(params[:chapter_id])
-  erb :chapter
+  erb :'chapter/chapter'
 end
 
 delete '/stories/:story_id/chapters/:chapter_id/delete' do
@@ -23,7 +23,7 @@ end
 get '/stories/:story_id/chapters/:chapter_id/edit' do
   @story = Story.find(params[:story_id])
   @chapter = Chapter.find(params[:chapter_id])
-  erb :chapter_edit
+  erb :'chapter/chapter_edit'
 end
 
 put '/stories/:story_id/chapters/:chapter_id/edit' do

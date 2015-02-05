@@ -1,0 +1,8 @@
+<h3>Edit Chapter</h3>
+
+<form action=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/edit"%> method="post">
+  <input type="hidden" name="_method" value="put"></input>
+  <input type="string" name="chapter[title]" value="<%=@chapter.title%>"></input><br>
+  <textarea name="chapter[content]"><%=@chapter.content%></textarea><br>
+  <input type="submit" value="Update">
+</form>
