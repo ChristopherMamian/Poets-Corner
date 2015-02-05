@@ -1,12 +1,15 @@
-<h3>STORY: <%= @story.title %></h3>
+<h3><%= @story.title.upcase %></h3>
 <h4>By <a href=<%="/users/#{@story.user.id}"%>><%= @story.user.name %></a></h4>
 
-<h3>Chapters</h3>
-<ol>
-<% @story.chapters.each do |chapter| %>
-  <li><a href=<%="/stories/#{@story.id}/chapters/#{chapter.id}/public"%>><%= "#{chapter.title}" %></li>
-<% end %>
-</ol>
+<h3>Chapters:</h3>
+<form action=<%="/stories/#{@story.id}/public/find_chapter"%> method="get">
+  <select name="chapter">
+    <% @story.chapters.each do |chapter| %>
+    <option value=<%="#{chapter.id}"%>><%= "#{chapter.title}" %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Read!">
+</form>
 
 <p>
 <a href="/dashboard">Back to Dashboard</a>

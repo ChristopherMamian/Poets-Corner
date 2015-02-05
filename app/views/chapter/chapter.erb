@@ -1,23 +1,22 @@
-<h2>Chapter <%= "#{@chapter.title}" %></h2>
+<div class="container">
 
-<h3>Comments</h3>
-<ul>
-<% @chapter.comments.each do |comment| %>
-  <li><a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/#{comment.id}"%>><%= comment.content %></a></li>
-<% end %>
-</ul>
+  <div class="chapter-header"><em> <%= "#{@chapter.title}" %></em></div>
 
-<p>
-CONTENT:
-<br>
-<%= @chapter.content %>
-</p>
+  <div id="chapter-content">
+    <%= @chapter.content %>
+  </div>
 
-<p>
+  <h3>Comments:</h3>
+  <ul>
+  <% @chapter.comments.each do |comment| %>
+    <li><a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/#{comment.id}"%>><%= comment.content %></a></li>
+  <% end %>
+  </ul>
 
-<a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/edit"%>>Edit Chapter</a>
-<form action=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/delete"%> method="post">
-  <input type="hidden" name="_method" value="delete"></input>
-  <button type="submit">Delete Chapter</button>
-</form>
-<a href=<%="/stories/#{@story.id}"%>>Back to Story</a>
+  <a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/edit"%>>Edit Chapter</a>
+  <form action=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/delete"%> method="post">
+    <input type="hidden" name="_method" value="delete"></input>
+    <button type="submit">Delete Chapter</button>
+  </form>
+  <a href=<%="/stories/#{@story.id}"%>>Back to Story</a>
+</div>

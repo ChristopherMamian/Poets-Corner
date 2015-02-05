@@ -1,6 +1,6 @@
 <h3>CREATE A NEW COMMENT</h3>
 
 <form action=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/new"%> method="post">
-  <textarea name="comment[content]">Your comment here!</textarea><br>
+  <textarea id="comment-input" name="comment[content]">Your comment here!</textarea><br>
   <input type="submit" value="Post!">
 </form>

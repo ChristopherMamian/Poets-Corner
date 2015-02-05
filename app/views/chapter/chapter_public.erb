@@ -1,18 +1,31 @@
-<h2>Chapter <%= "#{@chapter.title}" %></h2>
-<p>
-CONTENT:
-<br>
-<%= @chapter.content %>
+<div class="chapter-header"><em> <%= "#{@chapter.title}" %></em></div>
 
-<p>
-<a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/new"%>>Leave a Comment</a><br>
-
-<p>COMMENTS
-<ul><% @chapter.comments.each do |comment| %>
-  <li><%=comment.content%> -- <a href=<%="/users/#{comment.user_id}"%>><%="#{comment.user.name}" %></a></li>
-
-
-  <% end %>
-</ul>
-
+<form action=<%="/stories/#{@story.id}/public/find_chapter"%> method="get">
+  Chapters: <select name="chapter">
+    <% @story.chapters.each do |chapter| %>
+    <option value=<%="#{chapter.id}"%>><%= "#{chapter.title}" %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Read!">
+</form>
 <a href=<%="/stories/#{@story.id}/public"%>>Back to Story</a>
+
+<div id="chapter-content">
+  <%= @chapter.content %>
+</div>
+
+<div class="container">
+  <h3>Comments:</h3>
+  <ul>
+  <% @chapter.comments.each do |comment| %>
+    <li><a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/#{comment.id}"%>><%= comment.content %></a> -- <%= comment.user.name %></li>
+  <% end %>
+  </ul>
+
+  <a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/new"%>>Leave a Comment</a><br>
+</div>
+
+
+
+<!-- go to next chapter link -->
+<!-- go to next chapter link -->

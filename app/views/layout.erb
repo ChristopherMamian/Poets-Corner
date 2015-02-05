@@ -15,15 +15,36 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Storybook</title>
 </head>
 <body>
+  <div class="welcome" style="text-align: center">
+  STORYBOOK
+  <div class="sub-welcome">
+    <em>A novelest's best friend</em>
+  </div>
+</div>
   <nav>
-    <a href="/dashboard">Home</a>
-    <% if current_user %>
-      <a href="/logout">Logout</a>
+        <% if current_user %>
+
+    <ul>
+      <li><a href="/">HOME</a></li>
+      <li><a href="/">STORIES</a></li>
+      <li><a href="#">FRIENDS</a></li>
+      <li><a href=<%="/users/#{session[:user_id]}/edit"%>>ACCOUNT</a></li>
+      <li><a href="/logout">LOGOUT</a></li>
     <% end %>
+  </ul>
+<!--   <form id="searchbox" action="">
+    <input id="search" type="text" placeholder="Type here">
+    <input id="submit" type="submit" value="SEARCH">
+</form> -->
+
   </nav>
+
   <%= yield %>
+  <footer>
+    Made by Christopher Mamian
+  </footer>
 </body>
 </html>

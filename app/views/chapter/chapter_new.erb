@@ -1,7 +1,12 @@
-<h3>Create new story</h3>
+<h3>CREATE A NEW CHAPTER</h3>
+
+<p>Please copy your Word Doc text <a href="http://textfixer.com/html/convert-word-to-html.php" target="_blank">here</a> to convert it to HTML, then paste the HTML version in the box below.
+
+  <!-- <iframe width="900" src="http://textfixer.com/html/convert-word-to-html.php"></iframe> -->
 
 <form action=<%="/stories/#{@story.id}/chapters/new"%> method="post">
+  <input type="integer" name="chapter[chapter_number]" value=<%="#{@story.chapters.count + 1}"%>>
   <input type="string" name="chapter[title]" placeholder="title"><br>
-  <textarea name="chapter[content]">Your chapter here!</textarea><br>
+  <textarea id="chapter-input" name="chapter[content]">Your chapter here!</textarea><br>
   <input type="submit" value="Create!">
 </form>

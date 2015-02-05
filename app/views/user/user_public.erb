@@ -1,13 +1,14 @@
-<h1><%=@user.name%></h1>
-<h4>Member since <%="#{@user.created_at}" %> </h4>
+<div class="container">
+  <h1><%=@user.name%></h1>
+  <h4>Member since <%="#{@user.created_at}" %> </h4>
 
-<h3>Stories</h3>
-<ol>
-<% @user.stories.each do |story| %>
-  <li><a href=<%="/stories/#{story.id}/public"%>><%= story.title %></a></li>
-<% end %>
-</ol>
+  <h3>Stories</h3>
+  <ol>
+  <% @user.stories.each do |story| %>
+    <li><a href=<%="/stories/#{story.id}/public"%>><%= story.title %></a></li>
+  <% end %>
+  </ol>
 
-<a href=<%="/users/#{@user.id}/add"%>>ADD AS FRIEND</a>
-<br>
-<a href="/dashboard">HOME</a>
+  <a href=<%="/users/#{@user.id}/add"%>>ADD FRIEND</a>
+  <br>
+</div>

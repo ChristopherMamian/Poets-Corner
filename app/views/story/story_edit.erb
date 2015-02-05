@@ -22,6 +22,12 @@
     <option>Women's Fiction</option>
     <option>Young Adult</option>
     <option>Other</option>
-  </select><br>
+  </select>
+  <p>
+  DELETE CHAPTER<p>
+  <% @story.chapters.each do |chapter| %>
+    <input type="radio" name="chapter_to_delete" value=<%="#{chapter.id}"%>><%="#{chapter.chapter_number}. #{chapter.title}"%>
+    <br>
+  <% end %>
   <input type="submit" value="Update">
 </form>

@@ -1,67 +1,107 @@
-/* CSS declarations go here */
-body {font-family: Vollkorn; font-size: 160%; line-height: 160%; }
-h1, h2, h3, h4, h5, h6 {font-family: Georgia; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: #36AECC; font-style: italic; font-weight: 400;}
-h1 {font-size: 1.8em;}
-h2 {font-size: 1.6em;}
-h3 {font-size: 1.4em;}
-h4 {font-size: 1.3em;}
-h5 {font-size: 1.2em;}
-h6 {font-size: 1.1em;}
-p, pre, blockquote, table, ul, ol, dl {margin-top: .5em; margin-bottom: .5em;}
-ul ul, ul ol, ol ol, ol ul {margin-top: 0.5em; margin-bottom: 0.5em;}
-li {margin: 0.3em auto;}
-ul {margin-left: .5em; padding-left: 0.5em;}
-dt {font-weight: bold;}
-img {border: none;}
-pre {border-left: 1px solid #ccc; margin-left: 0em; padding-left: 0.5em;}
-blockquote {padding: 0.3em; background-color: #E8F2F5; margin-left:0.5em; margin-right:0;}
-th, td {border: 1px solid #ccc; padding: 0.3em;}
-th {background-color: #f0f0f0;}
-hr {border: none; border-top: 1px solid #E8F2F5; width: 100%;}
-del {text-decoration: line-through; color: #777777;}
-.toc li {list-style-type: none;}
-.todo {font-weight: bold; background-color: #f0ece8; color: #a03020;}
-.justleft {text-align: left;}
-.justright {text-align: right;}
-.justcenter {text-align: center;}
-.center {margin-left: auto; margin-right: auto;}
-
-footer { font-size: 0.7em; margin-top: 2em;}
-
-#content { margin: 0 auto; padding: 0 1em; max-width: 37em; position: relative; width: 61.8%;}
-
-a {
-    color: #36AECC;
-    text-decoration: none;
+body {
+  font-family: Arial;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Times;
 }
 
-a:visited {
-    color: #AAA;
+body a:link {
+  text-decoration: none;
 }
 
-a:hover {
-    color: #000;
-    text-decoration: underline;
+body a:visited {
+  color: brown;
 }
 
-.logo {
-  height: 2em;
+.container {
+  margin: 2%;
+  padding: 2%;
+  border: 4px solid black;
+  background-size: 700px;
+  background-repeat: no-repeat;
 }
 
-code {
-    font-family: Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 1px;
-    border-radius: 1px;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    padding: 0px 3px;
-    display: inline-block;
-    color: #52595d;
-    background-color: #E8F2F5;
-    font-size: 40%;
-    line-height: 1.4em;
-    margin-left: -1em;
-    overflow: auto;
+.welcome {
+  margin: 2%;
+  background-size: 700px;
+  background-repeat: no-repeat;
+  font-size: 100px;
+/*  font-family: 'Patrick Hand SC', cursive;
+*/}
+
+.sub-welcome {
+  font-size: 20px;
+}
+
+
+#chapter-content {
+  margin: 3% 15% 3% 15%;
+  padding: 2%;
+  background-color: white;
+  border: 5px solid SkyBlue;
+  font-size: 20px;
+}
+
+.chapter-header {
+  background-color: white;
+  text-align: center;
+  margin: 5% 20% 0 20%;
+  padding: 2%;
+  font-size: 40px;
+  font-family: Times;
+}
+
+nav {
+  border: 1px solid black;
+  font-size: 20px;
+}
+
+nav ul {
+  display: inline;
+}
+
+nav ul li {
+  display: inline;
+  padding: 1px 5px 1px 5px;
+}
+
+nav ul li a:link {
+  text-decoration: none;
+  color: gray;
+}
+
+nav ul li a:visited {
+  color: black;
+}
+
+nav ul li a:hover {
+  color: brown;
+}
+#chapter-input {
+  height: 300px;
+  width: 500px;
+}
+
+#comment-input {
+  height: 100px;
+  width: 400px;
+}
+
+#searchbox {
+  display: inline;
+}
+
+.quote {
+  width: 200px;
+  font-style: italic;
+  border: 1px solid gray;
+  margin: 5px;
+  padding: 10px;
+}
+
+footer {
+  font-size: 15px;
+  height: 40px;
+  text-align: center;
 }

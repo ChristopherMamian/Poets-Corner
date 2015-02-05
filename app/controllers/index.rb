@@ -10,6 +10,7 @@ get '/dashboard' do
   if current_user
     @user = User.find(session[:user_id])
     @users = User.all
+    @friends = []
     @user_stories = @user.stories
     erb :dashboard
   else

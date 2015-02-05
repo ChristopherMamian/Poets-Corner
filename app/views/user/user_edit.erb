@@ -1,11 +1,13 @@
-<h3>Edit Your Account</h3>
+<div class="container">
+  <h3>Edit Your Account</h3>
 
-<form action=<%="/users/#{@user.id}/edit"%> method="post">
-  <input type="hidden" name="_method" value="put"></input>
-  <input type="string" name="user[name]" value="<%=@user.name%>"><br>
-  <input type="email" name="user[email]" value="<%=@user.email%>"><br>
-  <input type="string" name="user[password]" value="<%=@user.password%>"><br>
-  <input type="submit" value="Save Changes">
-<form>
-<p>
-<a href=<%="/users/#{@user.id}/delete"%>>Delete Account</a>
+  <form action=<%="/users/#{@user.id}/edit"%> method="post">
+    <input type="hidden" name="_method" value="put"></input>
+    <input type="string" name="user[name]" value="<%=@user.name%>"><br>
+    <input type="email" name="user[email]" value="<%=@user.email%>"><br>
+    <input type="password" name="user[password]" value="<%=@user.password%>"><br>
+    <input type="submit" value="Save Changes">
+  <form>
+  <p>
+  <a href=<%="/users/#{@user.id}/delete"%>>Delete Account</a>
+</div>

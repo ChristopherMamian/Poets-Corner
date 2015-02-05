@@ -4,6 +4,7 @@ class CreateChapters < ActiveRecord::Migration
       t.string :title
       t.integer :story_id
       t.text :content
+      t.integer :chapter_number
 
       t.timestamps
     end

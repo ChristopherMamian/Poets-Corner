@@ -22,7 +22,7 @@ get '/stories/:story_id/chapters/:chapter_id/public' do
 end
 
 delete '/stories/:story_id/chapters/:chapter_id/delete' do
-  Chapter.find(params[:chapter_id]).delete
+  Chapter.find(params[:chapter_id]).destroy
   redirect "/stories/#{params[:story_id]}"
 end
 
