@@ -5,12 +5,14 @@ helpers do
     end
   end
 
-  def are_they_friends?(user_1, user_2)
-    @friend_object = Friend.where(:user_1 => user_1, :user_2 => user_2)
-    if @friend_object
-      return true
-    else
-      return false
+  def are_they_friends?(id_1, id_2)
+    friends = false
+    @user = User.find(id_1)
+    @user.friends.each do |friend|
+      if friend.id == id_2
+        friends = true
+      end
     end
+    friends
   end
 end

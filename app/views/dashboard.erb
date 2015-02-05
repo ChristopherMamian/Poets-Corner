@@ -24,9 +24,10 @@
 
 <div class="container">
 
-  <h3>Friends</h3>
-  <ul>
-    <li>Coming Soon!</li>
+  <h3>Critique Partners</h3>
+  <ul><% @friends.each do |friend| %>
+    <li><a href=<%="/users/#{friend.id}"%>><%= friend.name %></a></li>
+    <% end %>
   </ul>
 
    <h3>All Users</h3>

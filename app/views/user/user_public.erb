@@ -1,14 +1,26 @@
 <div class="container">
-  <h1><%=@user.name%></h1>
-  <h4>Member since <%="#{@user.created_at}" %> </h4>
+  <h1><%=@author.name%></h1>
+  <h4>Member since <%="#{@author.created_at}" %> </h4>
 
+<% if are_they_friends?(@current_user.id, @author.id) %>
   <h3>Stories</h3>
-  <ol>
-  <% @user.stories.each do |story| %>
-    <li><a href=<%="/stories/#{story.id}/public"%>><%= story.title %></a></li>
-  <% end %>
-  </ol>
+    <ol>
+    <% @author.stories.each do |story| %>
+      <li><a href=<%="/stories/#{story.id}/public"%>><%= story.title %></a></li>
+    <% end %>
+    </ol>
+  <a href=<%="/users/#{@current_user.id}/friends/#{@author.id}/delete"%>>REMOVE CRIT PARTNER</a>
+  <% elsif @current_user.id == @author.id %>
+    <h3>Stories</h3>
+      <ol>
+      <% @author.stories.each do |story| %>
+        <li><a href=<%="/stories/#{story.id}/public"%>><%= story.title %></a></li>
+      <% end %>
 
-  <a href=<%="/users/#{@user.id}/add"%>>ADD FRIEND</a>
-  <br>
+<% else %>
+  <a href=<%="/users/#{@current_user.id}/friends/new/#{@author.id}"%>>Add Critique Partner</a>
+<% end %>
+
+
+
 </div>

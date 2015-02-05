@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :stories
   has_many :comments
+  has_many :friendships
+  has_many :friends, :through => :friendships
 
   validates :name, presence: true
   validates :password, presence: true
