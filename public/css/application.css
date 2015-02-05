@@ -105,3 +105,11 @@ footer {
   height: 40px;
   text-align: center;
 }
+
+.bio-box {
+  width: 200px;
+  font-style: italic;
+  border: 5px solid gray;
+  margin: 5px;
+  padding: 10px;
+}

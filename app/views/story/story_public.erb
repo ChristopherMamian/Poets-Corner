@@ -1,5 +1,7 @@
 <h3><%= @story.title.upcase %></h3>
 <h4>By <a href=<%="/users/#{@story.user.id}"%>><%= @story.user.name %></a></h4>
+<p>
+<em><%= @story.logline %></em>
 
 <h3>Chapters:</h3>
 <form action=<%="/stories/#{@story.id}/public/find_chapter"%> method="get">

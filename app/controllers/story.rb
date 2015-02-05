@@ -37,6 +37,8 @@ end
 put '/stories/:story_id/edit' do
   story = Story.find(params[:story_id])
   story.update_attributes(params[:story])
-  Chapter.find(params[:chapter_to_delete].to_i).destroy
+  if params[:chapter_to_delete]
+    Chapter.find(params[:chapter_to_delete].to_i).destroy
+  end
   redirect "/stories/#{story.id}"
 end

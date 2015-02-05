@@ -2,8 +2,9 @@
 
 <form action=<%="/stories/#{@story.id}/edit"%> method="post">
   <input type="hidden" name="_method" value="put"></input>
-  <input type="string" name="story[title]" value="<%=@story.title%>"></input><br>
-  <select name="story[genre]">
+  Title:<input type="string" name="story[title]" value="<%=@story.title%>"></input><br>
+  Logline:<input type="string" name="story[logline]" value="<%=@story.logline%>"></input><br>
+  Genre:<select name="story[genre]">
     <option>Adventure</option>
     <option>Erotic</option>
     <option>FanFiction</option>
@@ -29,5 +30,6 @@
     <input type="radio" name="chapter_to_delete" value=<%="#{chapter.id}"%>><%="#{chapter.chapter_number}. #{chapter.title}"%>
     <br>
   <% end %>
+  <p>
   <input type="submit" value="Update">
 </form>

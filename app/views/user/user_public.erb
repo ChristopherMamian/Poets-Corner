@@ -2,6 +2,10 @@
   <h1><%=@author.name%></h1>
   <h4>Member since <%="#{@author.created_at}" %> </h4>
 
+  <div class="bio-box">
+    <%= @author.bio %>
+  </div>
+
 <% if are_they_friends?(@current_user.id, @author.id) %>
   <h3>Stories</h3>
     <ol>
