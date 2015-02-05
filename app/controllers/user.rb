@@ -23,7 +23,7 @@ post '/users/new' do
     @user = User.find_by(:email => params[:user][:email])
     session[:user_id] = @user.id
     Pony.mail(:to => "#{@user.email}", :from => '<noreply@storybook.com>', :subject => 'Welcome to Storybook!', :body => "Welcome to Storybook, #{@user.name}! http://localhost:9393/dashboard \n \nKEEP WRITING! <3 Storybook")
-    redirect '/dashboard'
+    redirect '/'
   else
     erb :error, :locals => {:message => "Oopse! One of the fields is missing! Please try to sign up again." }
   end

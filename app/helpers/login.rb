@@ -15,4 +15,14 @@ helpers do
     end
     friends
   end
+
+  def has_playlist?(user_id)
+    user = User.find(user_id)
+    if user.playlist
+      return true
+    else
+      return false
+    end
+  end
+
 end

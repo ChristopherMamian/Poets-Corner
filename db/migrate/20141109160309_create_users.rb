@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password
       t.string :bio
       t.string :access_token
+      t.string :playlist
 
       t.timestamps
     end
