@@ -11,3 +11,8 @@ get '/stories/:story_id' do
   @story = Story.find(params[:story_id])
   erb :story
 end
+
+delete '/stories/:story_id/delete' do
+  Story.find(params[:story_id]).delete
+  redirect '/dashboard'
+end

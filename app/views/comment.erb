@@ -2,4 +2,9 @@
 <%= @comment.content %>
 
 <p>
+  <form action=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/#{@comment.id}/delete"%> method="post">
+    <input type="hidden" name="_method" value="delete"></input>
+  <button type="submit">Delete Comment</button>
+</form>
+<p>
 <a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}"%>>Back to Chapter</a>

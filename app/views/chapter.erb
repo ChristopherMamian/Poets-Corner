@@ -9,4 +9,9 @@
 
 <p>
 <a href=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/comments/new"%>>Leave a Comment</a><br>
+
+<form action=<%="/stories/#{@story.id}/chapters/#{@chapter.id}/delete"%> method="post">
+  <input type="hidden" name="_method" value="delete"></input>
+  <button type="submit">Delete Chapter</button>
+</form>
 <a href=<%="/stories/#{@story.id}"%>>Back to Story</a>
