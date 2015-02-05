@@ -17,6 +17,8 @@ gem 'shotgun'
 
 gem 'pony'
 
+gem 'soundcloud'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
